@@ -1,0 +1,150 @@
+
+AWS Regions and Availability zones =>
+	- There are 22 aws regions around the world
+	- these regions operate on availability zones
+	- Multiple availability zones are associated with single region
+	- availability zones are located within the geaographic location of region
+	- there are 69 availability zones globally
+	
+	Availability: Application that are highly availabile are built in a manner such that a single failure wont lessen the application ability to
+		be fully functional.
+		
+		
+AWS Edge location =>
+	- Used as a nodes of global content delivery network
+	- Utilized by amazon cloud front and Amazon route 53
+	- Located globally at around 200 location globally
+	- Allow aws to serve content from location closest to the user
+	
+Visualizing AWS global infrastructure =>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Cloud Economics
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+=> Capitalized Expenditure (Capex): When building a data center, organization invest in upfront cost for building, servers and supporting equipments.
+=> Operating Expenditure (Opex): Regular day to day expenses for data center, ongoing connectivity, utility and maintenance cost
+
+	- Manage your own data center                  |        Cloud Infrastructure
+		- Large upfront cost (Capex)						- No Upfront cost (Only Opex)
+		- Unused capacity or unmet capacity                 - you pay as you go
+		- Increasing capacity and needs more				- Capacity scales to meet user demand
+			investment.
+		- Monthly cost will map to predicted				- Monthly cost will map to user demand
+			infrastructure cost
+			
+			
+=> Organize and Optimize AWS cost
+
+	AWS Cost explorer:
+		- Provides UI for exploring AWS costs.
+		- Provides breakdown by : service and cost tags
+		- Provides prediction for next 3 months.
+		- Gives recomendation for cost optimization.
+		
+	AWS Budget: 
+		- Provides the max budget you want to spend on specific services like EC2 max budget, etc.
+		
+	AWS Cost planning tools:
+		1)AWS TCO calculator: Determines what could be saved by liveraging cloud infrastructure.
+		2)AWS Simple monthly calculator: Cost of running specific cloud infrastructure.
+		
+	AWS Resource Tags: 
+		- Metadata assigned to specific AWS resource.
+		- Includes a name and an optional value.
+		- Common use case includes department, environment or project
+		
+	AWS Organization: 
+		- Allows organization to manage multiple accounts under single master account.
+		- Ability to leverage consolidated billings for all accounts.
+		- Common security implementation and logging across all accounts.
+		
+=> AWS TCO Calculator (Total Cost of Ownership)
+		- awstcocalculator.com
+		- This utility provide an in depth comparison of the cost that organization needs to pay for physical data center vs cloud infrastructure
+			in AWS
+		- You can view those and in depth comparison and download a detailed report made by AWS.
+		- AWS make this report based on your requirement plus its own assumptions and recomendation.
+		
+=> AWS simple monthly calculator (deprecated)
+=> AWS Pricing calculator
+	- calculator.aws
+	- Here you can select a type of service you need for your requirement like db service, ec2 or other and AWS will provide an estimated budget	
+		and recommend the already exist service options for the same like 32 gb ram, 512gb ssd, etc for ec2 it will suggest to go far large
+		ubantu ec2.
+		
+=> Cost Explorer
+	- Here we can get details of ongoing cost of the aws infra you are using also it provides the forecasted cost.
+	- We can get a detail of the monthly cost or daily cost.
+	- we can see cost associated with different services used
+	- we can see cost associated with different accounts linked to its master accounts
+	
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Supporting AWS Infrastructure
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+1)AWS Support:
+	- support from AWS resources for workloads running on cloud
+	- provided in different tiers based on scopes and needs
+	- includes tools to provide automated answers and recomendation
+	
+2)AWS Personal Health Dashboard:
+	- provides alerts and recomendation based on the incident or events that may impact you.
+	
+3)AWS Trusted Advisor:
+	- automated tool to check your aws usage against best practices
+	- provided based on different tier plans
+	- If best practices are followed you dont need an aws support 
+	- 7 core best practices advice are provided to all AWS customers
+	
+	Trusted Advisor Checks:
+		1.Cost Optimization
+		2.Performance
+		3.Security
+		4.Fault Tolerance
+		5.Service Limits
+		
+=> AWS Support Plan
+	- Differences based on: Communication Method, Response Time, Cost, Type of guidance offered.
+	
+	- AWS Basic Support:
+		- Provided for all AWS customers
+		- Access to trusted 7 advisor best practices
+		- 24 customer service, documentation, forums & whitepapers
+		- Access to AWS personal health dashboard
+		- no monthly cost
+		
+	- AWS Developer support:
+		- All features of basic
+		- dedicated support engineers on business hours through email 
+		- starts from 29$ per month (tied to AWS usage)
+		- limited to 1 primary account
+		
+	- AWS Business Support:
+		- All features of developer support
+		- dedicated support engineers on business hours through email, phone and chat optional
+		- All best practices are included
+		- To all the contacts
+		- Provides third party software support
+		- Starts from 100$ per month (tied to AWS usage)
+		
+	- AWS Enterprise Support:
+		- All features of Business support
+		- Dedicated technical account manager
+		- Starts from 15000$ per month (tied to AWS usage)
+		
+	- Support Response times
+	
+										Developer			Business		Enterprise
+								
+		- General Guidance			 12 Business Hours		24 Hours		24 Hours
+		- System Impaired			 24 Business Hours		12 Hours		12 Hours
+		- Prod system Impaired								 4 Hours		 4 Hours
+		- Prod System Down									 1 Hours		 1 Hours
+		- Business critical system											15 Mins
+			down
+		
+		
+	
+
+		
