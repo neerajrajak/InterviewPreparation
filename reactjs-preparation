@@ -1,0 +1,70 @@
+- Higher Order Components? What Why When How
+
+- Life Cycle methods of a components?
+	- Mounting Phase
+	- Updating Phase
+	- UnMounting Phase
+	- Order of Executions of each methods
+
+- state management?
+	- state and props
+	- props drilling
+	- react context
+	- pass data between two siblings
+
+- Redux/Zustand(new similar to redux)
+	- How, when, why
+	- Redux Toolkit
+
+- custom hooks?
+	- When to use it?
+	- examples
+	- code custom hooks
+
+- Lazy loading / Code Splitting / Chunkings
+	- suspense
+
+- Virtual DOM
+	- reconciliation
+	- react fiber
+	- how component render
+	- diffing algorithm
+
+- SSR vs CSR? **
+	- Whats?
+	- Difference between them?
+	- Know about SEO of your application
+	- performance
+
+- Routing
+	- react.router
+	- Role based access controls **
+	- query params
+	- dyanamic routing
+
+- Testing
+	- React Testing Library
+
+- Async task - useEffect in depth
+	- Api calls
+	- events
+	- promises
+
+- Reusability / Modularity / Testability
+
+- Performance **
+	- shimmer ui
+	- optimiazation
+		- asset(images, js, css) optimization
+		- optimization at bundler level
+		- CDN/server
+
+- Styling
+	- Tailwind / stylex (pros and cons)
+	- bootstrap (pros and cons)
+	- material ui (pros and cons)
+	- css/scss (pros and cons)
+
+- Accessability
+
+- security
