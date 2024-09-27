@@ -68,6 +68,8 @@ Typescript
 - Enum in typescript?
 - use of any datatype
 - What is the difference between type and interface?
+- What is generics and uninons in typescripts
+
 =================================================================================
 Angular
 =================================================================================
@@ -147,6 +149,8 @@ React
 - difference between useMemo vs useContext?
 - Explain event delegation?
 - What is shouldComponentUpdate?
+- What is component composition in react
+- how do you do forward and backward routing in react?
 
 =================================================================================
 NodeJs
