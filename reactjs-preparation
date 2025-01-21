@@ -1,4 +1,8 @@
-- Higher Order Components? What Why When How
+- Virtual DOM
+	- reconciliation
+	- react fiber
+	- how component render
+	- diffing algorithm
 
 - Life Cycle methods of a components?
 	- Mounting Phase
@@ -6,41 +10,48 @@
 	- UnMounting Phase
 	- Order of Executions of each methods
 
+- custom hooks?
+	- When to use it?
+	- examples
+	- code custom hooks
+
+- hooks
+	- useState
+	- useEffect
+	- useContext
+	- useReducer
+	- useMemo
+	- useCallback
+	- useRef
+
+- Higher Order Components? What Why When How
+
 - state management?
 	- state and props
 	- props drilling
 	- react context
 	- pass data between two siblings
 
-- Redux/Zustand(new similar to redux)
+- Redux or Zustand(new similar to redux)
 	- How, when, why
 	- Redux Toolkit
-
-- custom hooks?
-	- When to use it?
-	- examples
-	- code custom hooks
-
-- Lazy loading / Code Splitting / Chunkings
-	- suspense
-
-- Virtual DOM
-	- reconciliation
-	- react fiber
-	- how component render
-	- diffing algorithm
-
-- SSR vs CSR? **
-	- Whats?
-	- Difference between them?
-	- Know about SEO of your application
-	- performance
 
 - Routing
 	- react.router
 	- Role based access controls **
 	- query params
 	- dyanamic routing
+
+- Lazy loading / Code Splitting / Chunkings
+	- suspense
+
+
+
+- SSR vs CSR? **
+	- Whats?
+	- Difference between them?
+	- Know about SEO of your application
+	- performance
 
 - Testing
 	- React Testing Library
