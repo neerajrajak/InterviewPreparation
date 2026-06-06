@@ -1,1 +1,78 @@
-Add questions here
+
+Order topic has 6 partition, how many consumers instantances are recommended
+-> recommended 6 consumer instances, since each partition needs to be assigned to one consumer instance.
+
+If you define 10 partition will it improve performance.
+-> no
+
+If you have only 2 consumer instance
+-> 3 partition will be distributed to each consumer instance
+
+What if i have 4 consumer instance
+-> it doesn't matter how much consumer instance we have, kafka will balance the partition amongst the available consumer instances
+Whenever consumers leaves the consumer group or a new consumer is added kafka rebalance the partition
+
+What if we have 8 consumers for 6 partition?
+-> 2 consumers will sit idle
+
+what if one active consumer dies
+-> kafka immediately rebalance the division and if any idle consumers are there it assigns to it or else distribute amongst the available ones
+
+Does rebalance happens only for affected instance?
+-> No. Kafka recalculates and assign partition against the entire consumer present in the consumer group
+
+Suppose we have 6 partition consumed by 6 partition
+-> kafka rebalance and redistribute again
+
+How many copies of kafka message is stored in kafka?
+-> it depends on replication factor, n number of reolication will store n copies of message
+if replica is 3, 3 message
+leader copy - 1, follower - 2
+follower copy is for fault tolerance, if there is any issue with leader copy kafka takes from follower copy
+
+How does kafka gaurantees ordering?
+
+Apache Kafka guarantees message ordering strictly at the partition level, not across the entire topic. [1, 2, 3] 
+Here is a breakdown of how Kafka achieves and maintains this guarantee, and how your system configuration impacts it.
+## 1. Partition-Level FIFO Queue [4] 
+Kafka stores messages within a specific partition in the exact order they arrive. [5, 6, 7] 
+
+* 
+* Offsets: Each message sent to a partition gets assigned a sequential ID called an offset.
+* Append-Only Log: Once written, messages are immutable. Consumers always read messages from a partition sequentially, from the lowest offset to the highest, acting as a First-In, First-Out (FIFO) queue. [8, 9, 10, 11, 12] 
+* 
+
+## 2. Message Key Routing
+To ensure related events are processed in order, Kafka uses record keys. [13] 
+
+* 
+* Hashing: The producer hashes the message key to determine the destination partition.
+* Same Partition: All messages with the exact same key always go to the same partition.
+* Ordering Restored: Because they land in the same partition, their sequential order is strictly maintained. If you leave the key blank (null), Kafka distributes messages randomly/round-robin across partitions, losing strict order. [14, 15, 16, 17, 18] 
+* 
+
+## 3. Producer Configurations for Strict Ordering [19] 
+Network glitches or retries can mess up ordering during transmission. To prevent this, producers must be configured properly: [20, 21, 22, 23, 24] 
+
+* 
+* max.in.flight.requests.per.connection=1: This forces the producer to wait for a success response from Kafka before sending the next batch.
+* enable.idempotence=true: Modern Kafka versions (since 2.8+) enable this by default. It allows up to 5 in-flight requests while still guaranteeing ordering, because the broker automatically detects and reorders retried batches based on producer sequence numbers. [25, 26, 27, 28, 29] 
+* 
+
+## 4. Consumer Group Single-Thread Assignment [30] 
+Within a consumer group, only one consumer instance can read from a specific partition at any given time. [31] 
+
+* 
+* This design prevents multiple consumers from competing for messages within the same partition, which would otherwise lead to race conditions and out-of-order processing. [32, 33, 34, 35] 
+* 
+
+
+
+
+
+
+
+
+
+
+
